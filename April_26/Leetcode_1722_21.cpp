@@ -52,3 +52,30 @@ int minimumHammingDistance(vector<int>& source, vector<int>& target, vector<vect
 
         return ans;
 }
+
+int main(){
+    vector<int> source,target;
+    int n;
+    int s;
+    cin>>n;
+    cin>>s;
+    vector<vector<int>> allowedswaps;
+    for(int i=0;i<n;i++){
+       int x,y;
+       cin>>x,y;
+       source.push_back(x);
+       target.push_back(y);
+    }
+
+    for(int i=0;i<s;i++){
+       int x,y;
+       cin>>x,y;
+       vector<int> v(2);
+       v[0]=x;
+       v[1]=y;
+       allowedswaps.push_back(v);
+    }
+
+    cout<<minimumHammingDistance(source,target,allowedswaps);
+    
+}
